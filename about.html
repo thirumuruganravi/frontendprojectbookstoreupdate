@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Us – BookHaven</title>
+  <meta name="description" content="Learn about BookHaven's mission to curate premium books and build a thriving reading community.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/animations.css">
+</head>
+<body>
+
+<div id="toast-container"></div>
+
+<header class="navbar" role="banner">
+  <div class="navbar__inner">
+    <a href="index.html" class="navbar__logo" aria-label="BookHaven Home">
+      <div class="navbar__logo-icon"><i class="fa-solid fa-book-open"></i></div>
+      <div class="navbar__logo-text">Book<span>Haven</span></div>
+    </a>
+    <div class="nav__overlay"></div>
+    <nav class="nav__menu" id="nav-menu" aria-label="Main navigation">
+      <a href="index.html"   class="nav__link">Home</a>
+      <a href="books.html"   class="nav__link">Books</a>
+      <a href="about.html"   class="nav__link">About</a>
+      <a href="contact.html" class="nav__link">Contact</a>
+    </nav>
+    <div class="navbar__actions">
+      <a href="wishlist.html" class="navbar__icon-btn" aria-label="Wishlist">
+        <i class="fa-regular fa-heart"></i>
+        <span class="badge--wishlist"></span>
+      </a>
+      <a href="cart.html" class="navbar__icon-btn" aria-label="Cart">
+        <i class="fa-solid fa-cart-shopping"></i>
+        <span class="badge--cart"></span>
+      </a>
+      <button class="btn--login"><i class="fa-regular fa-user"></i> <span>Sign In</span></button>
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main>
+  <div class="page-header page-top reveal">
+    <div class="container">
+      <h1>About BookHaven</h1>
+      <p>Our story, mission, and the people behind the books</p>
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="index.html">Home</a>
+        <i class="fa-solid fa-chevron-right"></i>
+        <span>About</span>
+      </nav>
+    </div>
+  </div>
+
+  <!-- About Story -->
+  <section class="section">
+    <div class="container">
+      <div class="about-grid">
+
+        <div class="about__img-stack reveal-left" aria-hidden="true">
+          <img src="https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=600&h=750&fit=crop&crop=center"
+               alt="Books on shelves" class="about__img about__img--main">
+          <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=480&fit=crop&crop=center"
+               alt="Reading" class="about__img about__img--accent">
+          <div class="about__badge" aria-label="10 years of curating great books">
+            <span class="about__badge-num">10+</span>
+            <span class="about__badge-label">Years of Curating</span>
+          </div>
+        </div>
+
+        <div class="about__content reveal-right">
+          <div class="hero__eyebrow">
+            <i class="fa-solid fa-book-open"></i> Our Story
+          </div>
+          <h2>We Believe Every Book Can Change a Life</h2>
+          <p class="about__lead">
+            Founded in 2015, BookHaven started as a small neighbourhood bookshop with a big dream — to make great literature accessible to everyone. Today we serve over 50,000 readers worldwide with a hand-curated collection spanning every genre.
+          </p>
+          <div class="about__features stagger">
+            <div class="about__feature">
+              <div class="about__feature-icon"><i class="fa-solid fa-star"></i></div>
+              <div>
+                <div class="about__feature-title">Expertly Curated Collection</div>
+                <div class="about__feature-desc">Every title is reviewed by our team of literary experts before it joins our catalogue.</div>
+              </div>
+            </div>
+            <div class="about__feature">
+              <div class="about__feature-icon"><i class="fa-solid fa-users"></i></div>
+              <div>
+                <div class="about__feature-title">Thriving Reading Community</div>
+                <div class="about__feature-desc">Join reading challenges, book clubs, and monthly newsletters with our global community.</div>
+              </div>
+            </div>
+            <div class="about__feature">
+              <div class="about__feature-icon"><i class="fa-solid fa-truck-fast"></i></div>
+              <div>
+                <div class="about__feature-title">Fast & Free Shipping</div>
+                <div class="about__feature-desc">Free delivery on every order, dispatched within 24 hours from our warehouse.</div>
+              </div>
+            </div>
+            <div class="about__feature">
+              <div class="about__feature-icon"><i class="fa-solid fa-rotate-left"></i></div>
+              <div>
+                <div class="about__feature-title">30-Day Returns</div>
+                <div class="about__feature-desc">Not satisfied? Return any book within 30 days for a full, no-questions-asked refund.</div>
+              </div>
+            </div>
+          </div>
+          <a href="books.html" class="btn btn--primary">
+            <i class="fa-solid fa-book-open"></i> Explore Our Collection
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Stats Bar -->
+  <section style="background:var(--color-bg-alt);padding:var(--sp-2xl) 0;">
+    <div class="container">
+      <div class="stats-bar stagger">
+        <div class="stats-bar__item">
+          <span class="stats-bar__num">10K+</span>
+          <span class="stats-bar__label">Books in Catalogue</span>
+        </div>
+        <div class="stats-bar__item">
+          <span class="stats-bar__num">50K+</span>
+          <span class="stats-bar__label">Happy Readers</span>
+        </div>
+        <div class="stats-bar__item">
+          <span class="stats-bar__num">4.9★</span>
+          <span class="stats-bar__label">Average Rating</span>
+        </div>
+        <div class="stats-bar__item">
+          <span class="stats-bar__num">120+</span>
+          <span class="stats-bar__label">Countries Served</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Team / Mission -->
+  <section class="section">
+    <div class="container" style="max-width:760px;text-align:center;">
+      <div class="section-header reveal">
+        <h2>Our Mission</h2>
+        <p>What drives us every day</p>
+        <div class="section-divider"></div>
+      </div>
+      <p style="font-size:1.1rem;line-height:1.85;color:var(--color-muted);">
+        At BookHaven, we believe the right book at the right moment can transform a life. Our mission is simple: connect readers with books that inspire, educate, entertain, and challenge. We are committed to making the joy of reading accessible to everyone — regardless of age, background, or budget.
+      </p>
+      <div style="margin-top:var(--sp-xl);">
+        <a href="contact.html" class="btn btn--outline">
+          <i class="fa-solid fa-envelope"></i> Get in Touch
+        </a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer" role="contentinfo">
+  <div class="container">
+    <div class="footer__grid">
+      <div class="footer__brand">
+        <a href="index.html" class="navbar__logo" style="color:#fff;">
+          <div class="navbar__logo-icon"><i class="fa-solid fa-book-open"></i></div>
+          <div class="navbar__logo-text">Book<span>Haven</span></div>
+        </a>
+        <p>Your premium destination for curated books across every genre.</p>
+        <div class="footer__social">
+          <a href="#" class="footer__social-link" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="#" class="footer__social-link" aria-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+          <a href="#" class="footer__social-link" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+        </div>
+      </div>
+      <div class="footer__col">
+        <h4>Quick Links</h4>
+        <div class="footer__links">
+          <a href="index.html">Home</a><a href="books.html">All Books</a>
+          <a href="wishlist.html">Wishlist</a><a href="cart.html">Cart</a>
+          <a href="about.html">About</a><a href="contact.html">Contact</a>
+        </div>
+      </div>
+      <div class="footer__col">
+        <h4>Categories</h4>
+        <div class="footer__links">
+          <a href="books.html">Fiction</a><a href="books.html">Technology</a>
+          <a href="books.html">Self-Development</a><a href="books.html">Business</a>
+          <a href="books.html">Science</a><a href="books.html">Biography</a>
+        </div>
+      </div>
+      <div class="footer__col">
+        <h4>Contact</h4>
+        <div class="footer__links">
+          <span>123 Book Lane, Reading City</span>
+          <a href="mailto:info@bookhaven.com">info@bookhaven.com</a>
+          <a href="tel:+15551234567">+1 (555) 123-4567</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <span>&copy; 2026 BookHaven. All rights reserved.</span>
+      <div><a href="#">Privacy</a> &nbsp;·&nbsp; <a href="#">Terms</a></div>
+    </div>
+  </div>
+</footer>
+
+<script src="js/data.js"></script>
+<script src="js/app.js"></script>
+<script src="js/cart.js"></script>
+<script src="js/wishlist.js"></script>
+<script src="js/animate.js"></script>
+</body>
+</html>

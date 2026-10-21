@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BookHaven – Discover Your Next Favorite Book</title>
+  <meta name="description" content="BookHaven is your premium online bookstore. Browse thousands of books across fiction, technology, self-development, and more. Shop now and find your next great read.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/animations.css">
+</head>
+<body>
+
+<!-- ── Toast Container ────────────────── -->
+<div id="toast-container"></div>
+
+<!-- ── Navigation ────────────────────── -->
+<header class="navbar" role="banner">
+  <div class="navbar__inner">
+    <a href="index.html" class="navbar__logo" aria-label="BookHaven Home">
+      <div class="navbar__logo-icon"><i class="fa-solid fa-book-open"></i></div>
+      <div class="navbar__logo-text">Book<span>Haven</span></div>
+    </a>
+
+    <!-- Mobile overlay -->
+    <div class="nav__overlay" id="nav-overlay"></div>
+
+    <nav class="nav__menu" id="nav-menu" aria-label="Main navigation">
+      <a href="index.html"    class="nav__link">Home</a>
+      <a href="books.html"    class="nav__link">Books</a>
+      <a href="about.html"    class="nav__link">About</a>
+      <a href="contact.html"  class="nav__link">Contact</a>
+    </nav>
+
+    <div class="navbar__search">
+      <i class="fa-solid fa-magnifying-glass navbar__search-icon"></i>
+      <input type="text" id="nav-search" placeholder="Search books…" aria-label="Search books">
+      <kbd class="navbar__search-kbd">⌘K</kbd>
+    </div>
+
+    <div class="navbar__actions">
+      <a href="wishlist.html" class="navbar__icon-btn" aria-label="Wishlist">
+        <i class="fa-regular fa-heart"></i>
+        <span class="badge--wishlist" aria-label="Wishlist items"></span>
+      </a>
+      <a href="cart.html" class="navbar__icon-btn" aria-label="Shopping cart">
+        <i class="fa-solid fa-cart-shopping"></i>
+        <span class="badge--cart" aria-label="Cart items"></span>
+      </a>
+      <button class="btn--login"><i class="fa-regular fa-user"></i> <span>Sign In</span></button>
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main>
+
+  <!-- ── Hero ─────────────────────────── -->
+  <section class="hero page-top" aria-label="Hero section">
+    <div class="container">
+      <div class="hero__grid">
+        <div class="hero__content fade-in-up">
+          <div class="hero__eyebrow">
+            <i class="fa-solid fa-star"></i>
+            Over 1,000 Curated Books
+          </div>
+          <h1 class="hero__title">
+            Discover Your<br><em>Next Favorite</em><br>Book
+          </h1>
+          <p class="hero__desc">
+            Explore our handpicked collection of bestsellers, hidden gems, and timeless classics across every genre. Your perfect read is waiting.
+          </p>
+          <div class="hero__cta">
+            <a href="books.html" class="btn btn--primary">
+              <i class="fa-solid fa-cart-shopping"></i> Shop Now
+            </a>
+            <a href="#categories" class="btn btn--accent-outline">
+              Explore Collections
+            </a>
+          </div>
+          <div class="hero__stats">
+            <div>
+              <span class="hero__stat-num">1,000+</span>
+              <span class="hero__stat-label">Books Available</span>
+            </div>
+            <div>
+              <span class="hero__stat-num">50K+</span>
+              <span class="hero__stat-label">Happy Readers</span>
+            </div>
+            <div>
+              <span class="hero__stat-num">8</span>
+              <span class="hero__stat-label">Categories</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Decorative book stack -->
+        <div class="hero__visual" aria-hidden="true">
+          <div class="hero__book-stack">
+            <div class="hero__book hero__book--1">
+              <img src="https://images.unsplash.com/photo-1544947950-fa07a98d237f?w=300&h=450&fit=crop&crop=center" alt="">
+            </div>
+            <div class="hero__book hero__book--2">
+              <img src="https://images.unsplash.com/photo-1512820790803-83ca734da794?w=300&h=450&fit=crop&crop=center" alt="">
+            </div>
+            <div class="hero__book hero__book--3">
+              <img src="https://images.unsplash.com/photo-1532012197267-da84d127e765?w=300&h=450&fit=crop&crop=center" alt="">
+            </div>
+            <div class="hero__badge-float">
+              <div class="icon"><i class="fa-solid fa-award"></i></div>
+              <div>
+                <strong>4.9 ★</strong>
+                <span>Avg. Rating</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Categories ────────────────────── -->
+  <section class="section" id="categories" aria-label="Book categories">
+    <div class="container">
+      <div class="section-header">
+        <h2>Browse by Category</h2>
+        <p>Find the perfect book in your favorite genre</p>
+        <div class="section-divider"></div>
+      </div>
+      <div class="cats-grid stagger">
+        <div class="cat-card" data-category="Fiction" role="button" tabindex="0" aria-label="Filter by Fiction"
+             style="--cat-gradient: linear-gradient(135deg, #6366F1, #8B5CF6); --cat-shadow: rgba(99, 102, 241, 0.38); --cat-accent: #6366F1;">
+          <div class="cat-card__icon"><i class="fa-solid fa-wand-magic-sparkles"></i></div>
+          <div class="cat-card__name">Fiction</div>
+          <div class="cat-card__count"><span class="cat-card__dot"></span>125 books</div>
+        </div>
+        <div class="cat-card" data-category="Technology" role="button" tabindex="0" aria-label="Filter by Technology"
+             style="--cat-gradient: linear-gradient(135deg, #0EA5E9, #2563EB); --cat-shadow: rgba(14, 165, 233, 0.38); --cat-accent: #0EA5E9;">
+          <div class="cat-card__icon"><i class="fa-solid fa-microchip"></i></div>
+          <div class="cat-card__name">Technology</div>
+          <div class="cat-card__count"><span class="cat-card__dot"></span>125 books</div>
+        </div>
+        <div class="cat-card" data-category="Self-Development" role="button" tabindex="0" aria-label="Filter by Self-Development"
+             style="--cat-gradient: linear-gradient(135deg, #10B981, #059669); --cat-shadow: rgba(16, 185, 129, 0.38); --cat-accent: #10B981;">
+          <div class="cat-card__icon"><i class="fa-solid fa-compass"></i></div>
+          <div class="cat-card__name">Self-Dev</div>
+          <div class="cat-card__count"><span class="cat-card__dot"></span>125 books</div>
+        </div>
+        <div class="cat-card" data-category="Business" role="button" tabindex="0" aria-label="Filter by Business"
+             style="--cat-gradient: linear-gradient(135deg, #F59E0B, #D97706); --cat-shadow: rgba(245, 158, 11, 0.38); --cat-accent: #F59E0B;">
+          <div class="cat-card__icon"><i class="fa-solid fa-arrow-trend-up"></i></div>
+          <div class="cat-card__name">Business</div>
+          <div class="cat-card__count"><span class="cat-card__dot"></span>125 books</div>
+        </div>
+        <div class="cat-card" data-category="Science" role="button" tabindex="0" aria-label="Filter by Science"
+             style="--cat-gradient: linear-gradient(135deg, #8B5CF6, #D946EF); --cat-shadow: rgba(139, 92, 246, 0.38); --cat-accent: #8B5CF6;">
+          <div class="cat-card__icon"><i class="fa-solid fa-atom"></i></div>
+          <div class="cat-card__name">Science</div>
+          <div class="cat-card__count"><span class="cat-card__dot"></span>125 books</div>
+        </div>
+        <div class="cat-card" data-category="Biography" role="button" tabindex="0" aria-label="Filter by Biography"
+             style="--cat-gradient: linear-gradient(135deg, #EF4444, #DC2626); --cat-shadow: rgba(239, 68, 68, 0.38); --cat-accent: #EF4444;">
+          <div class="cat-card__icon"><i class="fa-solid fa-feather-pointed"></i></div>
+          <div class="cat-card__name">Biography</div>
+          <div class="cat-card__count"><span class="cat-card__dot"></span>125 books</div>
+        </div>
+        <div class="cat-card" data-category="Romance" role="button" tabindex="0" aria-label="Filter by Romance"
+             style="--cat-gradient: linear-gradient(135deg, #EC4899, #F43F5E); --cat-shadow: rgba(236, 72, 153, 0.38); --cat-accent: #EC4899;">
+          <div class="cat-card__icon"><i class="fa-solid fa-heart"></i></div>
+          <div class="cat-card__name">Romance</div>
+          <div class="cat-card__count"><span class="cat-card__dot"></span>125 books</div>
+        </div>
+        <div class="cat-card" data-category="Mystery" role="button" tabindex="0" aria-label="Filter by Mystery"
+             style="--cat-gradient: linear-gradient(135deg, #334155, #0F172A); --cat-shadow: rgba(51, 65, 85, 0.42); --cat-accent: #475569;">
+          <div class="cat-card__icon"><i class="fa-solid fa-fingerprint"></i></div>
+          <div class="cat-card__name">Mystery</div>
+          <div class="cat-card__count"><span class="cat-card__dot"></span>125 books</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Featured Books ────────────────── -->
+  <section class="section" style="background:var(--color-bg-alt);" aria-label="Featured books">
+    <div class="container">
+      <div class="section-header">
+        <h2>Featured Books</h2>
+        <p>Hand-picked by our literary experts — perfect for every reader</p>
+        <div class="section-divider"></div>
+      </div>
+      <div class="books-grid" id="books-grid"></div>
+      <div class="load-more-wrap">
+        <button class="btn btn--primary" id="load-more" style="min-width:160px;">
+          <i class="fa-solid fa-arrow-down"></i> Load More
+        </button>
+      </div>
+      <div id="no-results" class="no-results hidden">
+        <i class="fa-solid fa-book-open-reader"></i>
+        <p>No books found matching your criteria.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Newsletter Teaser ─────────────── -->
+  <section class="section">
+    <div class="container">
+      <div class="newsletter">
+        <h2>Stay in the Loop</h2>
+        <p>Get weekly recommendations, exclusive deals, and literary news delivered to your inbox.</p>
+        <form class="newsletter__form" id="nl-form" novalidate>
+          <input type="email" id="nl-email" placeholder="Enter your email address" aria-label="Email address" required>
+          <button type="submit" class="btn btn--primary">Subscribe</button>
+        </form>
+        <p class="newsletter__msg" id="nl-msg"></p>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ── Footer ─────────────────────────── -->
+<footer class="footer" role="contentinfo">
+  <div class="container">
+    <div class="footer__grid">
+      <div class="footer__brand">
+        <a href="index.html" class="navbar__logo" style="color:#fff;">
+          <div class="navbar__logo-icon"><i class="fa-solid fa-book-open"></i></div>
+          <div class="navbar__logo-text">Book<span>Haven</span></div>
+        </a>
+        <p>Your premium online destination for books that inspire, educate, and entertain. Curated with passion for every reader.</p>
+        <div class="footer__social">
+          <a href="#" class="footer__social-link" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="#" class="footer__social-link" aria-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+          <a href="#" class="footer__social-link" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#" class="footer__social-link" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+        </div>
+      </div>
+      <div class="footer__col">
+        <h4>Quick Links</h4>
+        <div class="footer__links">
+          <a href="index.html">Home</a>
+          <a href="books.html">All Books</a>
+          <a href="wishlist.html">Wishlist</a>
+          <a href="cart.html">Shopping Cart</a>
+          <a href="about.html">About Us</a>
+          <a href="contact.html">Contact</a>
+        </div>
+      </div>
+      <div class="footer__col">
+        <h4>Categories</h4>
+        <div class="footer__links">
+          <a href="books.html">Fiction</a>
+          <a href="books.html">Technology</a>
+          <a href="books.html">Self-Development</a>
+          <a href="books.html">Business</a>
+          <a href="books.html">Science</a>
+          <a href="books.html">Biography</a>
+          <a href="books.html">Romance</a>
+          <a href="books.html">Mystery</a>
+        </div>
+      </div>
+      <div class="footer__col">
+        <h4>Contact Us</h4>
+        <div class="footer__links">
+          <span><i class="fa-solid fa-location-dot" style="color:var(--color-accent);margin-right:6px"></i>123 Book Lane, Reading City</span>
+          <a href="mailto:info@bookhaven.com"><i class="fa-solid fa-envelope" style="color:var(--color-accent);margin-right:6px"></i>info@bookhaven.com</a>
+          <a href="tel:+15551234567"><i class="fa-solid fa-phone" style="color:var(--color-accent);margin-right:6px"></i>+1 (555) 123-4567</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <span>&copy; 2026 BookHaven. All rights reserved.</span>
+      <div>
+        <a href="#">Privacy Policy</a> &nbsp;·&nbsp;
+        <a href="#">Terms of Service</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="js/data.js"></script>
+<script src="js/app.js"></script>
+<script src="js/cart.js"></script>
+<script src="js/wishlist.js"></script>
+<script src="js/books.js"></script>
+<script>
+  // Newsletter (home page inline)
+  document.getElementById('nl-form')?.addEventListener('submit', function(e) {
+    e.preventDefault();
+    const email = document.getElementById('nl-email').value.trim();
+    const msg   = document.getElementById('nl-msg');
+    const re    = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!re.test(email)) {
+      msg.textContent = '⚠ Please enter a valid email address.';
+      msg.className = 'newsletter__msg newsletter__msg--err';
+    } else {
+      msg.textContent = '✓ Thank you for subscribing! Check your inbox soon.';
+      msg.className = 'newsletter__msg newsletter__msg--ok';
+      this.reset();
+    }
+  });
+
+  // Category card keyboard support
+  document.querySelectorAll('.cat-card').forEach(card => {
+    card.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') card.click(); });
+  });
+</script>
+<script src="js/animate.js"></script>
+</body>
+</html>

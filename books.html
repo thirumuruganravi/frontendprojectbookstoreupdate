@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>All Books – BookHaven</title>
+  <meta name="description" content="Browse all books at BookHaven. Search by title or author, filter by category and price, sort by rating.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/animations.css">
+</head>
+<body>
+
+<div id="toast-container"></div>
+
+<header class="navbar" role="banner">
+  <div class="navbar__inner">
+    <a href="index.html" class="navbar__logo" aria-label="BookHaven Home">
+      <div class="navbar__logo-icon"><i class="fa-solid fa-book-open"></i></div>
+      <div class="navbar__logo-text">Book<span>Haven</span></div>
+    </a>
+    <div class="nav__overlay" id="nav-overlay"></div>
+    <nav class="nav__menu" id="nav-menu" aria-label="Main navigation">
+      <a href="index.html"   class="nav__link">Home</a>
+      <a href="books.html"   class="nav__link">Books</a>
+      <a href="about.html"   class="nav__link">About</a>
+      <a href="contact.html" class="nav__link">Contact</a>
+    </nav>
+    <div class="navbar__search">
+      <i class="fa-solid fa-magnifying-glass navbar__search-icon"></i>
+      <input type="text" id="nav-search" placeholder="Search books…" aria-label="Search books">
+      <kbd class="navbar__search-kbd">⌘K</kbd>
+    </div>
+    <div class="navbar__actions">
+      <a href="wishlist.html" class="navbar__icon-btn" aria-label="Wishlist">
+        <i class="fa-regular fa-heart"></i>
+        <span class="badge--wishlist"></span>
+      </a>
+      <a href="cart.html" class="navbar__icon-btn" aria-label="Cart">
+        <i class="fa-solid fa-cart-shopping"></i>
+        <span class="badge--cart"></span>
+      </a>
+      <button class="btn--login"><i class="fa-regular fa-user"></i> <span>Sign In</span></button>
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main>
+  <div class="page-header page-top reveal">
+    <div class="container">
+      <h1>All Books</h1>
+      <p>Discover your next great read from our curated collection</p>
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="index.html">Home</a>
+        <i class="fa-solid fa-chevron-right"></i>
+        <span>Books</span>
+      </nav>
+    </div>
+  </div>
+
+  <section class="section">
+    <div class="container">
+
+      <!-- Filter Bar -->
+      <div class="filter-bar reveal" role="search" aria-label="Book filters">
+        <div class="filter-bar__group filter-bar__search">
+          <label class="filter-bar__label" for="search-input">Search</label>
+          <input type="text" id="search-input" placeholder="Title or author name…" aria-label="Search by title or author">
+        </div>
+        <div class="filter-bar__group">
+          <label class="filter-bar__label" for="filter-category">Category</label>
+          <select id="filter-category" aria-label="Filter by category">
+            <option value="all">All Categories</option>
+          </select>
+        </div>
+        <div class="filter-bar__group">
+          <div class="filter-bar__price-label filter-bar__label">
+            <span>Price Range</span>
+            <span id="price-display">₹0 – ₹1,500</span>
+          </div>
+          <input type="range" id="filter-price" min="0" max="1500" step="50" value="1500" aria-label="Maximum price">
+        </div>
+        <div class="filter-bar__group">
+          <label class="filter-bar__label" for="sort-select">Sort By</label>
+          <select id="sort-select" aria-label="Sort books">
+            <option value="default">Default</option>
+            <option value="title">Title (A–Z)</option>
+            <option value="price-asc">Price: Low to High</option>
+            <option value="price-desc">Price: High to Low</option>
+            <option value="rating">Top Rated</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Results Counter -->
+      <div class="books-count-bar" id="books-count-bar" aria-live="polite">
+        Showing <span id="books-shown-count">16</span> of <span id="books-total-count">1,000</span> books
+      </div>
+
+      <!-- Books Grid -->
+      <div class="books-grid" id="books-grid" aria-label="Books list"></div>
+
+      <!-- No Results -->
+      <div id="no-results" class="no-results hidden" role="status">
+        <i class="fa-solid fa-book-open-reader"></i>
+        <h3>No books found</h3>
+        <p>Try adjusting your search or filter criteria.</p>
+      </div>
+
+      <!-- Load More -->
+      <div class="load-more-wrap">
+        <button class="btn btn--primary" id="load-more">
+          <i class="fa-solid fa-arrow-down"></i> Load More Books
+        </button>
+      </div>
+
+    </div>
+  </section>
+</main>
+
+<footer class="footer" role="contentinfo">
+  <div class="container">
+    <div class="footer__grid">
+      <div class="footer__brand">
+        <a href="index.html" class="navbar__logo" style="color:#fff;">
+          <div class="navbar__logo-icon"><i class="fa-solid fa-book-open"></i></div>
+          <div class="navbar__logo-text">Book<span>Haven</span></div>
+        </a>
+        <p>Your premium destination for curated books across every genre.</p>
+        <div class="footer__social">
+          <a href="#" class="footer__social-link" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="#" class="footer__social-link" aria-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+          <a href="#" class="footer__social-link" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+        </div>
+      </div>
+      <div class="footer__col">
+        <h4>Quick Links</h4>
+        <div class="footer__links">
+          <a href="index.html">Home</a>
+          <a href="books.html">All Books</a>
+          <a href="wishlist.html">Wishlist</a>
+          <a href="cart.html">Cart</a>
+          <a href="about.html">About</a>
+          <a href="contact.html">Contact</a>
+        </div>
+      </div>
+      <div class="footer__col">
+        <h4>Categories</h4>
+        <div class="footer__links">
+          <a href="#">Fiction</a><a href="#">Technology</a>
+          <a href="#">Self-Development</a><a href="#">Business</a>
+          <a href="#">Science</a><a href="#">Biography</a>
+          <a href="#">Romance</a><a href="#">Mystery</a>
+        </div>
+      </div>
+      <div class="footer__col">
+        <h4>Contact</h4>
+        <div class="footer__links">
+          <span>123 Book Lane, Reading City</span>
+          <a href="mailto:info@bookhaven.com">info@bookhaven.com</a>
+          <a href="tel:+15551234567">+1 (555) 123-4567</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <span>&copy; 2026 BookHaven. All rights reserved.</span>
+      <div><a href="#">Privacy</a> &nbsp;·&nbsp; <a href="#">Terms</a></div>
+    </div>
+  </div>
+</footer>
+
+<script src="js/data.js"></script>
+<script src="js/app.js"></script>
+<script src="js/cart.js"></script>
+<script src="js/wishlist.js"></script>
+<script src="js/books.js"></script>
+<script src="js/animate.js"></script>
+</body>
+</html>

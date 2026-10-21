@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact & Newsletter – BookHaven</title>
+  <meta name="description" content="Get in touch with BookHaven or subscribe to our newsletter for the latest book releases, reviews, and exclusive deals.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/animations.css">
+</head>
+<body>
+
+<div id="toast-container"></div>
+
+<header class="navbar" role="banner">
+  <div class="navbar__inner">
+    <a href="index.html" class="navbar__logo" aria-label="BookHaven Home">
+      <div class="navbar__logo-icon"><i class="fa-solid fa-book-open"></i></div>
+      <div class="navbar__logo-text">Book<span>Haven</span></div>
+    </a>
+    <div class="nav__overlay"></div>
+    <nav class="nav__menu" id="nav-menu" aria-label="Main navigation">
+      <a href="index.html"   class="nav__link">Home</a>
+      <a href="books.html"   class="nav__link">Books</a>
+      <a href="about.html"   class="nav__link">About</a>
+      <a href="contact.html" class="nav__link">Contact</a>
+    </nav>
+    <div class="navbar__actions">
+      <a href="wishlist.html" class="navbar__icon-btn" aria-label="Wishlist">
+        <i class="fa-regular fa-heart"></i>
+        <span class="badge--wishlist"></span>
+      </a>
+      <a href="cart.html" class="navbar__icon-btn" aria-label="Cart">
+        <i class="fa-solid fa-cart-shopping"></i>
+        <span class="badge--cart"></span>
+      </a>
+      <button class="btn--login"><i class="fa-regular fa-user"></i> <span>Sign In</span></button>
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main>
+  <div class="page-header page-top reveal">
+    <div class="container">
+      <h1>Contact & Newsletter</h1>
+      <p>We'd love to hear from you</p>
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="index.html">Home</a>
+        <i class="fa-solid fa-chevron-right"></i>
+        <span>Contact</span>
+      </nav>
+    </div>
+  </div>
+
+  <!-- Newsletter -->
+  <section class="section" style="background:var(--color-bg-alt);">
+    <div class="container">
+      <div class="newsletter reveal">
+        <h2>Join Our Reading Community</h2>
+        <p>Subscribe for weekly book recommendations, exclusive deals, author interviews, and literary news — straight to your inbox.</p>
+        <form class="newsletter__form" id="nl-form" novalidate aria-label="Newsletter subscription">
+          <input type="email" id="nl-email" placeholder="Enter your email address" aria-label="Email address" required>
+          <button type="submit" class="btn btn--primary">
+            <i class="fa-solid fa-paper-plane"></i> Subscribe
+          </button>
+        </form>
+        <p class="newsletter__msg" id="nl-msg" role="alert" aria-live="polite"></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <h2>Get in Touch</h2>
+        <p>Have a question? We're here to help — typically reply within 24 hours</p>
+        <div class="section-divider"></div>
+      </div>
+
+      <div class="contact-grid">
+
+        <!-- Contact Info -->
+        <div class="contact-info reveal-left">
+          <h3>Let's Connect</h3>
+          <div class="contact-info-item">
+            <div class="contact-info-icon"><i class="fa-solid fa-location-dot"></i></div>
+            <div>
+              <div class="contact-info-label">Visit Us</div>
+              <div class="contact-info-value">123 Book Lane, Reading City, RC 45678</div>
+            </div>
+          </div>
+          <div class="contact-info-item">
+            <div class="contact-info-icon"><i class="fa-solid fa-envelope"></i></div>
+            <div>
+              <div class="contact-info-label">Email Us</div>
+              <div class="contact-info-value"><a href="mailto:info@bookhaven.com">info@bookhaven.com</a></div>
+            </div>
+          </div>
+          <div class="contact-info-item">
+            <div class="contact-info-icon"><i class="fa-solid fa-phone"></i></div>
+            <div>
+              <div class="contact-info-label">Call Us</div>
+              <div class="contact-info-value"><a href="tel:+15551234567">+1 (555) 123-4567</a></div>
+            </div>
+          </div>
+          <div class="contact-info-item">
+            <div class="contact-info-icon"><i class="fa-solid fa-clock"></i></div>
+            <div>
+              <div class="contact-info-label">Business Hours</div>
+              <div class="contact-info-value">Mon–Sat: 9 AM – 6 PM</div>
+            </div>
+          </div>
+
+          <div style="margin-top:var(--sp-xl);">
+            <h4 style="color:var(--color-primary);margin-bottom:var(--sp-md);">Follow Us</h4>
+            <div class="footer__social">
+              <a href="#" class="footer__social-link" aria-label="Facebook" style="background:var(--color-bg-alt);color:var(--color-primary);">
+                <i class="fa-brands fa-facebook-f"></i>
+              </a>
+              <a href="#" class="footer__social-link" aria-label="Twitter" style="background:var(--color-bg-alt);color:var(--color-primary);">
+                <i class="fa-brands fa-x-twitter"></i>
+              </a>
+              <a href="#" class="footer__social-link" aria-label="Instagram" style="background:var(--color-bg-alt);color:var(--color-primary);">
+                <i class="fa-brands fa-instagram"></i>
+              </a>
+              <a href="#" class="footer__social-link" aria-label="YouTube" style="background:var(--color-bg-alt);color:var(--color-primary);">
+                <i class="fa-brands fa-youtube"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Contact Form -->
+        <div class="contact-form reveal-right">
+          <h3>Send a Message</h3>
+          <form id="contact-form" novalidate aria-label="Contact form">
+            <div class="form-row">
+              <div class="form-group" id="grp-name">
+                <label for="contact-name">Full Name *</label>
+                <input type="text" id="contact-name" placeholder="Jane Austen" autocomplete="name" required>
+                <span class="form__error" id="err-name">Please enter your full name.</span>
+              </div>
+              <div class="form-group" id="grp-email">
+                <label for="contact-email">Email Address *</label>
+                <input type="email" id="contact-email" placeholder="jane@example.com" autocomplete="email" required>
+                <span class="form__error" id="err-email">Please enter a valid email.</span>
+              </div>
+            </div>
+            <div class="form-group" id="grp-subject">
+              <label for="contact-subject">Subject *</label>
+              <input type="text" id="contact-subject" placeholder="What is this about?" required>
+              <span class="form__error" id="err-subject">Please enter a subject.</span>
+            </div>
+            <div class="form-group" id="grp-message">
+              <label for="contact-message">Message *</label>
+              <textarea id="contact-message" rows="5" placeholder="Write your message here…" required></textarea>
+              <span class="form__error" id="err-message">Please enter your message.</span>
+            </div>
+            <button type="submit" class="btn btn--primary btn--full">
+              <i class="fa-solid fa-paper-plane"></i> Send Message
+            </button>
+            <div class="form-msg" id="contact-msg" role="alert" aria-live="polite"></div>
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer" role="contentinfo">
+  <div class="container">
+    <div class="footer__grid">
+      <div class="footer__brand">
+        <a href="index.html" class="navbar__logo" style="color:#fff;">
+          <div class="navbar__logo-icon"><i class="fa-solid fa-book-open"></i></div>
+          <div class="navbar__logo-text">Book<span>Haven</span></div>
+        </a>
+        <p>Your premium destination for curated books across every genre.</p>
+        <div class="footer__social">
+          <a href="#" class="footer__social-link" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="#" class="footer__social-link" aria-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+          <a href="#" class="footer__social-link" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+        </div>
+      </div>
+      <div class="footer__col">
+        <h4>Quick Links</h4>
+        <div class="footer__links">
+          <a href="index.html">Home</a><a href="books.html">All Books</a>
+          <a href="wishlist.html">Wishlist</a><a href="cart.html">Cart</a>
+          <a href="about.html">About</a><a href="contact.html">Contact</a>
+        </div>
+      </div>
+      <div class="footer__col">
+        <h4>Categories</h4>
+        <div class="footer__links">
+          <a href="books.html">Fiction</a><a href="books.html">Technology</a>
+          <a href="books.html">Self-Development</a><a href="books.html">Business</a>
+          <a href="books.html">Science</a><a href="books.html">Biography</a>
+        </div>
+      </div>
+      <div class="footer__col">
+        <h4>Contact</h4>
+        <div class="footer__links">
+          <span>123 Book Lane, Reading City</span>
+          <a href="mailto:info@bookhaven.com">info@bookhaven.com</a>
+          <a href="tel:+15551234567">+1 (555) 123-4567</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <span>&copy; 2026 BookHaven. All rights reserved.</span>
+      <div><a href="#">Privacy</a> &nbsp;·&nbsp; <a href="#">Terms</a></div>
+    </div>
+  </div>
+</footer>
+
+<script src="js/data.js"></script>
+<script src="js/app.js"></script>
+<script src="js/cart.js"></script>
+<script src="js/wishlist.js"></script>
+<script>
+  // ── Newsletter form ───────────────────────────────────────
+  document.getElementById('nl-form').addEventListener('submit', function(e) {
+    e.preventDefault();
+    const email = document.getElementById('nl-email').value.trim();
+    const msg   = document.getElementById('nl-msg');
+    const re    = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!re.test(email)) {
+      msg.textContent = '⚠ Please enter a valid email address.';
+      msg.className = 'newsletter__msg newsletter__msg--err';
+    } else {
+      msg.textContent = '✓ You\'re subscribed! Welcome to the BookHaven community.';
+      msg.className = 'newsletter__msg newsletter__msg--ok';
+      this.reset();
+    }
+  });
+
+  // ── Contact form validation ───────────────────────────────
+  const emailRe = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+  function setError(groupId, errId, show) {
+    const grp = document.getElementById(groupId);
+    const err = document.getElementById(errId);
+    grp.classList.toggle('error', show);
+    err.classList.toggle('show', show);
+  }
+
+  document.getElementById('contact-form').addEventListener('submit', function(e) {
+    e.preventDefault();
+    const name    = document.getElementById('contact-name').value.trim();
+    const email   = document.getElementById('contact-email').value.trim();
+    const subject = document.getElementById('contact-subject').value.trim();
+    const message = document.getElementById('contact-message').value.trim();
+    const msgEl   = document.getElementById('contact-msg');
+
+    let valid = true;
+    if (!name)              { setError('grp-name',    'err-name',    true); valid = false; } else { setError('grp-name',    'err-name',    false); }
+    if (!emailRe.test(email)) { setError('grp-email',  'err-email',   true); valid = false; } else { setError('grp-email',  'err-email',   false); }
+    if (!subject)           { setError('grp-subject', 'err-subject', true); valid = false; } else { setError('grp-subject', 'err-subject', false); }
+    if (!message)           { setError('grp-message', 'err-message', true); valid = false; } else { setError('grp-message', 'err-message', false); }
+
+    if (valid) {
+      msgEl.textContent = '✓ Your message has been sent! We\'ll get back to you within 24 hours.';
+      msgEl.className = 'form-msg form-msg--ok show';
+      this.reset();
+      showToast('Message sent successfully!');
+    } else {
+      msgEl.textContent = '✗ Please fix the errors above before submitting.';
+      msgEl.className = 'form-msg form-msg--err show';
+    }
+  });
+
+  // Clear errors on input
+  ['contact-name','contact-email','contact-subject','contact-message'].forEach(id => {
+    document.getElementById(id)?.addEventListener('input', function() {
+      this.closest('.form-group')?.classList.remove('error');
+      this.closest('.form-group')?.querySelector('.form__error')?.classList.remove('show');
+    });
+  });
+</script>
+<script src="js/animate.js"></script>
+</body>
+</html>
